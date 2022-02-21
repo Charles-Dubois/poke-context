@@ -32,7 +32,6 @@ export default function Home() {
       <p>Name : {pokemon.name}</p>
       <p>Height :{pokemon.height}</p>
       <p>Weight : {pokemon.weight}</p>
-      <p>Type : {pokemon.type}</p>
     </>
   );
 }
