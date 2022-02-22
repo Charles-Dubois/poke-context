@@ -1,12 +1,19 @@
+// use history
+import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 export default function Login() {
+  const history = useHistory();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    // got to home
+    history.push("/");
+    console.log(data);
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
