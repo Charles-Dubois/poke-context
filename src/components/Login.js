@@ -1,6 +1,9 @@
 // use history
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { UserContext } from "../App";
+import { useContext } from "react";
+
 export default function Login() {
   const history = useHistory();
   const {
@@ -15,8 +18,10 @@ export default function Login() {
     console.log(data);
   };
 
+  const loggedInState = useContext(UserContext);
+  const setAuth = () => loggedInState.setIsLoggedIn(true);
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(setAuth)}>
       <input
         {...register("username", {
           required: "this is required",

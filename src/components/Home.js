@@ -11,16 +11,17 @@ export default function Home() {
       .catch((err) => console.log(err));
   }, [randomNumber]);
 
-  const ChangeRandomNumber = () => {
-    setRandomNumber(Math.floor(Math.random() * 100) + 1);
+  const handleCLick = () => {
+    setRandomNumber(Math.floor(Math.random() * 876) + 1);
   };
 
   return pokemon ? (
     <>
-      <button onClick={ChangeRandomNumber}>Click me!</button>
+      <button onClick={handleCLick}>Click me!</button>
       <p>Name : {pokemon.name}</p>
       <p>Height :{pokemon.height}</p>
       <p>Weight : {pokemon.weight}</p>
+      {/* <p>{pokemon.types[0].type.name}</p> */}
     </>
   ) : (
     <span>Loading ...</span>
