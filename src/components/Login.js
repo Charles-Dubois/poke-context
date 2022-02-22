@@ -7,6 +7,7 @@ export default function Login() {
   } = useForm();
 
   const onSubmit = (data) => console.log(data);
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <input
@@ -18,6 +19,7 @@ export default function Login() {
           },
         })}
         placeholder="Username"
+        type="text"
       />
       {<span>{errors.username?.message}</span>}
 
