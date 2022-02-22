@@ -19,8 +19,22 @@ export default function Login() {
   };
 
   const loggedInState = useContext(UserContext);
-  const setAuth = () => loggedInState.setIsLoggedIn(true);
-  return (
+  const setAuth = () => {
+    loggedInState.setIsLoggedIn(true);
+  };
+  const handleLogOut = () => {
+    loggedInState.setIsLoggedIn(false);
+  };
+
+  //   loggedInState.setIsLoggedIn
+  //   <button className="button" onClick={onSubmit}>Log out </button>
+  // <input type="submit" value="Log in" />
+
+  return loggedInState.isLoggedIn ? (
+    <button className="button" onClick={handleLogOut}>
+      Log out
+    </button>
+  ) : (
     <form onSubmit={handleSubmit(setAuth)}>
       <input
         {...register("username", {
