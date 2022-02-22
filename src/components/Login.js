@@ -11,24 +11,17 @@ export default function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  const onSubmit = (data) => {
-    // got to home
+  const handleLogOut = () => {
+    loggedInState.setIsLoggedIn(false);
+  };
+  const onSubmit = () => {
     history.push("/");
-    console.log(data);
   };
 
   const loggedInState = useContext(UserContext);
   const setAuth = () => {
     loggedInState.setIsLoggedIn(true);
   };
-  const handleLogOut = () => {
-    loggedInState.setIsLoggedIn(false);
-  };
-
-  //   loggedInState.setIsLoggedIn
-  //   <button className="button" onClick={onSubmit}>Log out </button>
-  // <input type="submit" value="Log in" />
 
   return loggedInState.isLoggedIn ? (
     <button className="button" onClick={handleLogOut}>

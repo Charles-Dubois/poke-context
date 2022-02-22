@@ -11,20 +11,11 @@ export default function App() {
     isLoggedIn: isLoggedIn,
     setIsLoggedIn: setIsLoggedIn,
   };
-  {
-    /* test */
-  }
-  const consoleLOG = () => console.log(isLoggedIn);
-  {
-    /* test */
-  }
+
   return (
     <UserContext.Provider value={value}>
       <BrowserRouter>
         <nav>
-          {/* test */}
-          <button onClick={consoleLOG}>test</button>
-          {/* test */}
           <Link to="/">Home</Link>
           <Link to="/login">Login</Link>
         </nav>
